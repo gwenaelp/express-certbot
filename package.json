@@ -1,0 +1,11 @@
+{
+  "name": "express-certbot",
+  "version": "0.0.0",
+  "description": "a module to manage your https configuration on express projects",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gwenael Pluchon <accounts@gwenp.fr>",
+  "license": "ISC"
+}
