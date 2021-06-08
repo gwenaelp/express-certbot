@@ -1,11 +1,12 @@
 const fs = require('fs');
 module.exports = {
-  init (expressApp) {
-    const serverHttps = require('https').createServer({
-      // passphrase: 'Arson37Availed88Resolve'
-    }, expressApp);
-    const isDirectory = source => !fs.lstatSync('./certificates/' + source).isFile();
-    const certFolders = fs.readdirSync('./certificates')
+  init (expressApp, folder) {
+    if (folder === undefined) {
+      folder = 'certificates';
+    }
+    const serverHttps = require('https').createServer({}, expressApp);
+    const isDirectory = source => !fs.lstatSync(`./${folder}/${source}`).isFile();
+    const certFolders = fs.readdirSync(`./${folder}`)
       .filter(isDirectory)
       //.map(d => d.name);
     console.log('certFolders', certFolders);
